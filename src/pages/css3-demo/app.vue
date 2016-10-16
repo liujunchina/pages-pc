@@ -18,12 +18,21 @@
         }
         h1{
             font-size: 40px;
-            padding: 26px 0;
+            padding: 20px 0;
             text-align: center;
         }
         .title,.tip{
             padding: 10px 0;
             font-size: 32px;
+        }
+        a{
+            color: #595959;
+            &:hover{
+                color: #333;
+            }
+        }
+        .back{
+            margin: 20px 0;
         }
     }
 </style>

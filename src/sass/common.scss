@@ -3,30 +3,24 @@
 @import "base";
 
 html,body {
-  background: #f4f4f4;
+  background-color: #ffffff;
 }
 body{
-  max-width: 750px;
   margin: auto;
   background-color: #ffffff;
+  font-size: 14px;
 }
 body,h1, h2, h3, h4, h5, h6{
   font-family: $font-face;
 }
-
 [v-cloak] {
   display: none;
 }
-
 .tc{
   text-align: center;
 }
-.selector {
-  width: 150px;
-  height: 64px; /*px*/
-  font-size: 28px; /*px*/
-  border: 1px solid #ddd; /*no*/
-}
-.selector2{
-  @include font-dpr(12)
+.wrap{
+  position: relative;
+  width: $width;
+  margin: 0 auto;
 }

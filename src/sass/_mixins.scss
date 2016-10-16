@@ -1,4 +1,5 @@
 $font-face: "tahoma,arial", "Hiragino Sans GB", "WenQuanYi Micro Hei", "微软雅黑", "宋体", "sans-serif";
+$width:1200px;
 
 @mixin font-dpr($font-size){
   font-size: $font-size; /*no*/

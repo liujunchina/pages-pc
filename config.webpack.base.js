@@ -4,9 +4,8 @@ var util = require('util');
 var autoprefixer = require('autoprefixer');
 var utils = require('./utils');
 
-// 移动端
-var pxtorem = require('postcss-px2rem');
-var mPstcssConfig = [autoprefixer({ browsers:["android 4", "iOS 6"]}), pxtorem({ remUnit: 75 })];
+// PC端
+var pstcssConfig = [autoprefixer({ browsers:  ['last 3 versions','> 5%','ie >= 8','Firefox >= 10','last 3 Safari versions']})];
 
 // pc config
 var webpack= require('webpack');
@@ -203,11 +202,11 @@ module.exports=function (options) {
             //     { test: /\.css$/, loader: "style-loader!css-loader!postcss-loader" }
             // ],
             postcss: function () {
-                return mPstcssConfig;
+                return pstcssConfig;
             }
         },
         postcss:function () {
-            return mPstcssConfig;
+            return pstcssConfig;
         },
         resolve: {
             extensions: ['', '.js', '.json'],
