@@ -10,6 +10,7 @@
 </template>
 <style rel="stylesheet/scss" lang="scss" scoped>
     .list{
+        list-style-type: decimal;
         padding: 8px 0;
     }
 

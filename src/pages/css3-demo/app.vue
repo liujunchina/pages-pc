@@ -8,7 +8,7 @@
         color:#595959;
     }
     .wrap{
-        padding: 20px 40px;
+        padding: 20px 0;
         .view {
             transition: all .5s ease;
         }

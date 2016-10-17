@@ -23,8 +23,16 @@ module.exports = function(){
             name:'flop-brand',
             title:'css3翻牌子效果',
             component:require('./flop-brand.vue')
+        },
+        '/css3-3d-carousel':{
+            name:'css3-3d-carousel',
+            title:'css3旋转木马效果',
+            component:require('./css3-3d-carousel.vue')
+        },
+        '/requestAnimationFrame':{
+            name:'requestAnimationFrame',
+            title:'requestAnimationFrame ',
+            component:require('./requestAnimationFrame.vue')
         }
-
-
     };
 };
