@@ -33,6 +33,11 @@ module.exports = function(){
             name:'requestAnimationFrame',
             title:'requestAnimationFrame ',
             component:require('./requestAnimationFrame.vue')
+        },
+        '/load-animation':{
+            name:'load-animation',
+            title:'css3加载动画',
+            component:require('./load-animation.vue')
         }
     };
 };
