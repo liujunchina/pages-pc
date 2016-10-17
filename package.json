@@ -14,7 +14,7 @@
     "copyDirBasePath": "./src/static/"
   },
   "scripts": {
-    "server": "cd build & http-server -p 3000",
+    "server": "cd build & http-server -p 10009",
     "dev": "node node-dev-server",
     "bug": "webpack-dev-server --config ./config.dev --hot --inline --devtool eval --progress --colors --content-base build",
     "build": "node node-webpack-build ./config.pro",
