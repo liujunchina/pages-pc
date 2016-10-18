@@ -236,6 +236,14 @@ module.exports=function (options) {
                 minChunks: Infinity
             }),
 
+            new UglifyJsPlugin({ //压缩代码
+                sourceMap: true,
+                compress: false,
+                mangle: {
+                    except: ['$super', '$', 'exports', 'require'] //排除关键字
+                }
+            }),
+
             new webpack.ProvidePlugin({
                 /*
                 Vue: 'vue', // 加载Vue全局
@@ -243,9 +251,7 @@ module.exports=function (options) {
                 Base: 'base',  // Base
                 Cookie: 'cookie' // cookie
                  */
-            }),
-            new webpack.optimize.OccurenceOrderPlugin(),
-            new webpack.optimize.DedupePlugin()
+            })
 
         ].concat(htmlWebpackPluginConfig),
         //使用webpack-dev-server，提高开发效率
@@ -280,12 +286,17 @@ module.exports=function (options) {
         }),
         new UglifyJsPlugin({ //压缩代码
             sourceMap: false,
-            drop_console: true,
             compress: {
-                warnings: false
+                warnings: false,
+                drop_console: true,
+                drop_debugger: true,
             },
-            except: [ '$', 'exports', 'require'] //排除关键字
-        })
+            mangle: {
+                except: ['$super', '$', 'exports', 'require'] //排除关键字
+            }
+        }),
+        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.optimize.DedupePlugin()
     ] : [
         // new webpack.HotModuleReplacementPlugin(),
         // new webpack.NoErrorsPlugin(),
