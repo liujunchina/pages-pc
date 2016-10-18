@@ -5,13 +5,29 @@
 import Base from 'base';
 require('./fullpage.scss');
 
-
 $(function () {
+    $('#j_fullPage').imagesLoaded({
+        background: '.bgimg'    // 鸡肋，只能匹配当前元素的背景图片不会循环子集
+    })
+    .always(function (instance) {
+        console.log('all images loaded');
+    })
+    .done(function (instance) {
+        console.log('all images successfully loaded');
+    })
+    .fail(function () {
+        console.log('all images loaded, at least one is broken');
+    })
+    .progress(function (instance, image) {
+        var result = image.isLoaded ? 'loaded' : 'broken';
+        console.log('image is ' + result + ' for ' + image.img.src);
+    });
+
    $('#j_fullPage').fullpage({
         verticalCentered: false, // 内容是否垂直居中 css3，不兼容ie7
         resize: false,           // 字体是否resize 通过rem单位控制 不兼容ie7
         // anchors:['page1','page2','page3','page4'],   //定义锚链接 （hashChange ie不兼容部分bug）
-        menu:'#j_menu',          //绑定菜单，设定的相关属性与 anchors 的值对应后，菜单可以控制滚动
+        // menu:'#j_menu',          //绑定菜单，设定的相关属性与 anchors 的值对应后，菜单可以控制滚动
         scrollingSpeed: 700,     // 滚动速度
         easing: 'easeInOutQuart',   // 动画方式
         navigation: true,        // 是否显示项目导航
@@ -36,6 +52,9 @@ $(function () {
         continuousVertical: false, //是否循环滚动，与 loopTop 及 loopBottom 不兼容
         animateAnchor: true,
         normalScrollElementTouchThreshold:5,
+       onLeave:function (index,nextIndex,direction ) {
+            debugger
+       },
     });
 
 
