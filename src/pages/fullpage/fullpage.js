@@ -2,10 +2,14 @@
  * Created by Liu.Jun on 2016/10/17.
  */
 
-import Base from 'base';
 require('./fullpage.scss');
-import avalon from 'avalon';
-let $fullpage = $('#j_fullPage');
+require('./jquery.rs.mjs');
+
+var Base = require('base'),
+    avalon = require('avalon'),
+    $fullpage = $('#j_fullPage'),
+    isSupportsAnimation = Base.supportsCss('animation'),
+    vm;
 
 let fullPage = {
     init:function () {
@@ -49,7 +53,7 @@ let fullPage = {
             loopTop:false,              // 滚动到最顶部后是否滚底部
             loopHorizontal: true,       // 左右滑块是否循环滑动
             autoScrolling: true,       // 是否使用插件的滚动方式，如果选择 false，则会出现浏览器自带的滚动条
-            scrollOverflow: false,      // 内容超过满屏后是否显示滚动条
+            scrollOverflow: true,      // 内容超过满屏后是否显示滚动条
             // css3:true,                 // 	是否使用 CSS3 transforms 滚动
             paddingTop: 0, //与顶部的距离
             paddingBottom:0, //	与底部距离
@@ -60,14 +64,7 @@ let fullPage = {
             continuousVertical: false, //是否循环滚动，与 loopTop 及 loopBottom 不兼容
             animateAnchor: true,
             normalScrollElementTouchThreshold:5,
-            afterRender:function () {
-                $.fn.fullpage.setKeyboardScrolling(false);
-                $.fn.fullpage.setAllowScrolling(false);
-
-                let vm = avalon.define({
-                    $id:'fullPageCtl',
-                });
-            },
+            afterRender:afterRender,
         });
 
         /**
@@ -109,6 +106,26 @@ let fullPage = {
          */
     }
 };
+
+var afterRender = function () {
+    // $.fn.fullpage.setKeyboardScrolling(false);
+    // $.fn.fullpage.setAllowScrolling(false);
+
+    $fullpage.rsElm({
+
+
+
+    });
+
+
+    vm = avalon.define({
+        $id:'fullPageCtl'
+    })
+
+};
+
+
+
 
 fullPage.init();
 
