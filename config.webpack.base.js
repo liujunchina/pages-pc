@@ -219,6 +219,7 @@ module.exports=function (options) {
                 "images": path.resolve(__dirname, 'src/images'),
 
                 'vue':path.resolve(__dirname,'src/lib/vue.js'),
+                'avalon':path.resolve(__dirname,'src/lib/avalon.js'),
                 'vue-router':path.resolve(__dirname,'src/lib/vue-router.js'),
                 'base':path.resolve(__dirname, 'src/commonjs/base.js'),
                 'cookie':path.resolve(__dirname, 'src/lib/cookie.js'),
