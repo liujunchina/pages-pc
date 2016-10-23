@@ -23,6 +23,22 @@ var Base = {
     isString: function (o) {
         return _getType(o) === '[object String]'
     },
+    supportsCss : function(prop){
+        var div = document.createElement('div'),
+            vendors = 'Khtml O Moz Webkit'.split(' '),
+            len = vendors.length;
+        if ( prop in div.style ) return true;
+        if ('-ms-' + prop in div.style) return true;
+        prop = prop.replace(/^[a-z]/, function(val) {
+            return val.toUpperCase();
+        });
+        while(len--) {
+            if ( vendors[len] + prop in div.style ) {
+                return true;
+            }
+        }
+        return false;
+    },
     url: {
         location: root.location,
         cache: null,
@@ -86,6 +102,17 @@ var Base = {
             type: type,
             version: version
         }
+    },
+    throttle: function(fn, delay) {
+        var timer = null;
+        return function() {
+            var context = this,
+                args = arguments;
+            clearTimeout(timer);
+            timer = setTimeout(function() {
+                fn.apply(context, args);
+            }, delay);
+        };
     },
     mobileBrowser: function () {
         var sys = '', ver = '', v = [];

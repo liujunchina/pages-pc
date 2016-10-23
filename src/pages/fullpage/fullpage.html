@@ -1,31 +1,39 @@
-<div id="j_fullPage" class="fullpage-wrap">
-    <section class="loader">
+<div class="ms-controller" ms-controller="fullPageCtl">
+    <div id="j_fullPage" class="fullpage-wrap">
+        <section class="loader section">
+            <div class="loading">
+                <div class="progress">loading 0%</div>
+                <a href="javascript:;" class="jump">跳过</a>
+            </div>
+            <div class="img-test">
+                <img class="j_div" data-dw="300" data-dh="100" src="./images/xxx.jpg" alt="">
+            </div>
+            <div class="video">
+                <video class="j_bg" id="j_video" src="/video.mp4" data-dw="1920" data-dh="900" preload="auto"></video>
+            </div>
+        </section>
+        <section class="section section1">
+            <h3>第一屏</h3>
+            <p>请滚动到第二屏查看</p>
+        </section>
+        <section class="section section2">
+            <h3>第二屏</h3>
+            <p>请滚动到第二屏查看</p>
+        </section>
+        <section class="section section3">
+            <h3>第三屏</h3>
+            <p>请滚动到第三屏查看</p>
+        </section>
+        <section class="section section4">
+            <h3>第四屏</h3>
+            <p>请滚动到第四屏查看</p>
+        </section>
+    </div>
 
-    </section>
-    <section class="section section1">
-        <h3>第一屏</h3>
-        <img src="./images/1.jpg" alt="">
-        <img src="./images/1.jpg" alt="">
-        <img src="./images/1.jpg" alt="">
-        <div class="test bgimg" style="background: url('/images/1-19427c513c2ed086fb800760fb5b30db.jpg') no-repeat 50% 100%"></div>
-        <p>请滚动到第二屏查看</p>
-    </section>
-    <section class="section section2">
-        <h3>第二屏</h3>
-        <p>请滚动到第二屏查看</p>
-    </section>
-    <section class="section section3">
-        <h3>第三屏</h3>
-        <p>请滚动到第三屏查看</p>
-    </section>
-    <section class="section section4">
-        <h3>第四屏</h3>
-        <p>请滚动到第四屏查看</p>
-    </section>
+    <ul id="j_menu" class="menu" style="display: none;">
+        <li data-menuanchor="page1"><a href="#page1">第一屏</a></li>
+        <li data-menuanchor="page2"><a href="#page2">第二屏</a></li>
+        <li data-menuanchor="page3"><a href="#page3">第三屏</a></li>
+        <li data-menuanchor="page4"><a href="#page4">第四屏</a></li>
+    </ul>
 </div>
-<ul id="j_menu" class="menu">
-    <li data-menuanchor="page1"><a href="#page1">第一屏</a></li>
-    <li data-menuanchor="page2"><a href="#page2">第二屏</a></li>
-    <li data-menuanchor="page3"><a href="#page3">第三屏</a></li>
-    <li data-menuanchor="page4"><a href="#page4">第四屏</a></li>
-</ul>

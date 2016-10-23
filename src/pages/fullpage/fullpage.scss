@@ -1,9 +1,37 @@
 .fullpage-wrap{
+  .loading {
+    .jump {
+      display: block;
+      width: 120px;
+      height: 35px;
+      line-height: 35px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      position: absolute;
+      bottom: 5%;
+      right: 20%;
+      text-align: center;
+      color: #000000;
+      text-decoration: none;
+    }
+    .progress {
+      display: block;
+      width: 500px;
+      height: 200px;
+      position: absolute;
+      left: 50%;
+      top: 20%;
+      margin-left: -250px;
+      text-align: center;
+      font-size: 30px;
+      background-color: #ffffff;
+    }
+  }
   .test {
     display: block;
     width: 1080px;
     height: 440px;
-
+    background: url('./images/1.jpg') no-repeat 50% 100%;
   }
 
   .section1{
