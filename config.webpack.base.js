@@ -285,17 +285,17 @@ module.exports=function (options) {
         new ExtractTextPlugin('css/[name].css?[contenthash]', {
             allChunks: true
         }),
-        new UglifyJsPlugin({ //压缩代码
-            sourceMap: false,
-            compress: {
-                warnings: false,
-                drop_console: true,
-                drop_debugger: true,
-            },
-            mangle: {
-                except: ['$super', '$', 'exports', 'require'] //排除关键字
-            }
-        }),
+        // new UglifyJsPlugin({ //压缩代码
+        //     sourceMap: false,
+        //     compress: {
+        //         warnings: false,
+        //         drop_console: true,
+        //         drop_debugger: true,
+        //     },
+        //     mangle: {
+        //         except: ['$super', '$', 'exports', 'require'] //排除关键字
+        //     }
+        // }),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.DedupePlugin()
     ] : [
