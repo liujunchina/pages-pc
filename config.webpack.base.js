@@ -236,15 +236,6 @@ module.exports=function (options) {
                 names: ['common/common-lib'],
                 minChunks: Infinity
             }),
-
-            new UglifyJsPlugin({ //压缩代码
-                sourceMap: true,
-                compress: false,
-                mangle: {
-                    except: ['$super', '$', 'exports', 'require'] //排除关键字
-                }
-            }),
-
             new webpack.ProvidePlugin({
                 /*
                 Vue: 'vue', // 加载Vue全局
@@ -299,6 +290,13 @@ module.exports=function (options) {
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.DedupePlugin()
     ] : [
+        new UglifyJsPlugin({ //压缩代码
+            sourceMap: true,
+            compress: false,
+            mangle: {
+                except: ['$super', '$', 'exports', 'require'] //排除关键字
+            }
+        })
         // new webpack.HotModuleReplacementPlugin(),
         // new webpack.NoErrorsPlugin(),
     ]);
