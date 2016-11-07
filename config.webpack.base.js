@@ -290,13 +290,13 @@ module.exports=function (options) {
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.DedupePlugin()
     ] : [
-        new UglifyJsPlugin({ //压缩代码
-            sourceMap: true,
-            compress: false,
-            mangle: {
-                except: ['$super', '$', 'exports', 'require'] //排除关键字
-            }
-        })
+        // new UglifyJsPlugin({ //压缩代码
+        //     sourceMap: true,
+        //     compress: false,
+        //     mangle: {
+        //         except: ['$super', '$', 'exports', 'require'] //排除关键字
+        //     }
+        // })
         // new webpack.HotModuleReplacementPlugin(),
         // new webpack.NoErrorsPlugin(),
     ]);
