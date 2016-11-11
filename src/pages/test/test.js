@@ -61,10 +61,36 @@ var strData = {
     name:'liu',
     age:'1008'
 }
-var str = `fsad\`fasd${strData.liu}
-
+var str = `fsad\`fasd${strData.name}
 
 fdasdf,
 姓名：${strData.age}`;
 
 console.log(str);
+
+// array 扩展
+let nodeList = document.querySelectorAll('div');
+// console.log(nodeList);
+// console.log(Array.from(nodeList));
+// console.log(Array.from('fasdfasdf'));
+
+console.log(Array.of(3, 11, 8));
+
+let xx = 'xx';
+
+console.log([... xx]);
+
+console.log(...[4,2134,2134,2134])
+
+
+
+
+
+
+
+
+
+
+
+
+
