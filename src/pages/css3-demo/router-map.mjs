@@ -38,6 +38,11 @@ module.exports = function(){
             name:'load-animation',
             title:'css3加载动画',
             component:require('./load-animation.vue')
-        }
+        },
+        '/border-animation':{
+            name: 'border-animation',
+            title:'Border Animation Effect',
+            component:require('./border-animation.vue')
+        },
     };
 };

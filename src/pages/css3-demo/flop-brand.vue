@@ -71,9 +71,6 @@
             transform:rotateY(0deg);
             background-color: rgba(65, 149, 122, 0.8);
         }
-        .backface{
-            opacity: 0;
-            transform:rotateY(180deg);
-        }
+
     }
 </style>
